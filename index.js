@@ -12,9 +12,9 @@ let xmessage = 0;
 //Zorg dat de rest van de mensen in de server deze command niet weten behalve admins. Iedereen die dit weet kan deze command gebruiken.
 client.on("messageCreate", (message) => {
     if (message.content.startsWith(".counting"/*Start of the command you want to set the begin number with (don't make it complicated just one word)*/)) {
-        nuNummer = message.toString().replace('.counting '/*If you changed the start of the command than make this the same (don't forget to type a space after)*/,'');
-        nuNummer = parseInt(nuNummer);
-        message.channel.send("Ik begin nu met checken van af " + nuNummer);
+        nuNumber = message.toString().replace('.counting '/*If you changed the start of the command than make this the same (don't forget to type a space after)*/,'');
+        nuNumber = parseInt(nuNumber);
+        message.channel.send("Ik begin nu met checken van af " + nuNumber);
     }
 });
 
@@ -23,9 +23,9 @@ client.on("messageCreate", (message) => {
     if (message.channel === channel01) {
         message01 = parseInt(message.content);
         console.log(message01);
-        nuNummer = nuNummer + 1;
-        console.log(nuNummer);
-        if (message01 === nuNummer) {
+        nuNumber = nuNumber + 1;
+        console.log(nuNumber);
+        if (message01 === nuNumber) {
             console.log("is gelijk");
         } else {
             message.react('❌');
